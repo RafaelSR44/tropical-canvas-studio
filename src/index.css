@@ -39,20 +39,20 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Cores Tropicais Personalizadas */
+    --tropical-primary: 140 28% 19%;        /* #2D5738 - Verde principal */
+    --tropical-secondary: 140 23% 29%;      /* #4A7C59 - Verde secundário */
+    --tropical-light: 88 51% 55%;           /* #8BC34A - Verde claro */
+    --tropical-accent: 0 70% 50%;           /* #D32F2F - Vermelho destaque */
+    --tropical-cream: 60 56% 91%;           /* #F5F5DC - Bege/Creme */
   }
 
   .dark {
@@ -91,6 +91,13 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Cores Tropicais no Dark Mode */
+    --tropical-primary: 140 28% 25%;        /* Mais claro no dark */
+    --tropical-secondary: 140 23% 35%;      /* Mais claro no dark */
+    --tropical-light: 88 51% 60%;           /* Mais vibrante no dark */
+    --tropical-accent: 0 70% 55%;           /* Mais claro no dark */
+    --tropical-cream: 60 56% 15%;           /* Mais escuro no dark */
   }
 }
 
@@ -102,4 +109,134 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Utility classes para as cores tropicais */
+@layer utilities {
+  .text-tropical-primary {
+    color: hsl(var(--tropical-primary));
+  }
+  
+  .text-tropical-secondary {
+    color: hsl(var(--tropical-secondary));
+  }
+  
+  .text-tropical-light {
+    color: hsl(var(--tropical-light));
+  }
+  
+  .text-tropical-accent {
+    color: hsl(var(--tropical-accent));
+  }
+  
+  .text-tropical-cream {
+    color: hsl(var(--tropical-cream));
+  }
+
+  .bg-tropical-primary {
+    background-color: hsl(var(--tropical-primary));
+  }
+  
+  .bg-tropical-secondary {
+    background-color: hsl(var(--tropical-secondary));
+  }
+  
+  .bg-tropical-light {
+    background-color: hsl(var(--tropical-light));
+  }
+  
+  .bg-tropical-accent {
+    background-color: hsl(var(--tropical-accent));
+  }
+  
+  .bg-tropical-cream {
+    background-color: hsl(var(--tropical-cream));
+  }
+
+  .border-tropical-primary {
+    border-color: hsl(var(--tropical-primary));
+  }
+  
+  .border-tropical-secondary {
+    border-color: hsl(var(--tropical-secondary));
+  }
+  
+  .border-tropical-light {
+    border-color: hsl(var(--tropical-light));
+  }
+  
+  .border-tropical-accent {
+    border-color: hsl(var(--tropical-accent));
+  }
+  
+  .border-tropical-cream {
+    border-color: hsl(var(--tropical-cream));
+  }
+
+  .hover\:bg-tropical-primary:hover {
+    background-color: hsl(var(--tropical-primary));
+  }
+  
+  .hover\:bg-tropical-secondary:hover {
+    background-color: hsl(var(--tropical-secondary));
+  }
+  
+  .hover\:bg-tropical-light:hover {
+    background-color: hsl(var(--tropical-light));
+  }
+  
+  .hover\:bg-tropical-accent:hover {
+    background-color: hsl(var(--tropical-accent));
+  }
+  
+  .hover\:bg-tropical-cream:hover {
+    background-color: hsl(var(--tropical-cream));
+  }
+
+  .hover\:text-tropical-primary:hover {
+    color: hsl(var(--tropical-primary));
+  }
+  
+  .hover\:text-tropical-secondary:hover {
+    color: hsl(var(--tropical-secondary));
+  }
+  
+  .hover\:text-tropical-light:hover {
+    color: hsl(var(--tropical-light));
+  }
+  
+  .hover\:text-tropical-accent:hover {
+    color: hsl(var(--tropical-accent));
+  }
+  
+  .hover\:text-tropical-cream:hover {
+    color: hsl(var(--tropical-cream));
+  }
+}
+
+/* Animações customizadas */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
 }
