@@ -67,7 +67,7 @@ ${formData.surfaceWidth && formData.surfaceHeight ? `Tamanho: ${formData.surface
 
 Aguardo contato!`;
     
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5511981216824?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
